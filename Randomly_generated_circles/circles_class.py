@@ -1,4 +1,3 @@
-##!/usr/bin/pyhton2.7
 
 import math
 import pygame
@@ -18,7 +17,7 @@ class Circle:
     	self.x_origin, self.y_origin = randrange(100,1500), randrange(100,800)
         self.count = 0
         self.r, self.g, self.b = randrange(0,255), randrange(0,255), randrange(0,255)
-   	self.max_radius = randrange(5,50)
+        self.max_radius = randrange(5,50)
 
     def generate_pixel(self):
         while True:
