@@ -1,5 +1,5 @@
 #! usr/bin/python
-from random import randrange
+from random import *
 import pygame
 import sys 
 from pygame.locals import *
@@ -9,13 +9,25 @@ pygame.init()
 
 screenSize = (1700,1500)
 setDisplay = pygame.display.set_mode(screenSize, RESIZABLE)
-pygame.display.set_caption("Random Walk!")
+pygame.display.set_caption("Birds Flocking!!!")
 singlePixel = pygame.PixelArray(setDisplay)
 fps = 100
 five_seconds_interval = 5*fps
 total_frames = 0
 
 clock = pygame.time.Clock()
+
+#COLORS
+red = (255,0,0)
+green = (0,255,0)
+blue = (0,0,255)
+black = (0,0,0,)
+white = (255,255,255)
+yellow = (255,217,0)
+purple = (69,0,68)
+black = (0,0,0)
+
+colors = [white, blue, green, yellow, purple, red]
 
 #DIRECTIONS
 east = (-1,3,-1,2)
@@ -53,8 +65,9 @@ while True:
 
 	if total_frames % five_seconds_interval == 0:
 		direction = choice(directions)
+		color = choice(colors)
 		for bird in birds:
-			bird.change_direction(direction)
+			bird.change_direction(direction, color)
 
 
 	

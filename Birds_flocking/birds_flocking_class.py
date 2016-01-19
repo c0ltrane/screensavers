@@ -2,19 +2,6 @@ from random import *
 import pygame
 from pygame.locals import *
 
-#COLORS
-red = ((255,0,0))
-green = ((0,255,0))
-blue = ((0,0,255))
-black = ((0,0,0,))
-white = ((255,255,255))
-yellow = ((255,217,0))
-purple = ((69,0,68))
-black = ((0,0,0))
-
-colors = [white, blue, green, yellow, purple, red]
-
-
 
 class Walker:
 	
@@ -24,8 +11,8 @@ class Walker:
 	
 	def __init__(self):
 		self.x, self.y = randrange(300,500),randrange(300,350)
-		((self.r,self.g,self.b)) = colors[0]
 		self.direction = (-1,3,-1,2)
+		self.color = (255,255,255)
 
 		
 	def fly(self):
@@ -39,19 +26,20 @@ class Walker:
 		self.y = (self.y + y_step) % 850
 		
 	
-		self.singlePixel[self.x][self.y] = ((self.r,self.g,self.b))
-		self.singlePixel[self.x+1][self.y] = ((self.r,self.g,self.b))
-		self.singlePixel[self.x][self.y+1] = ((self.r,self.g,self.b))
-		self.singlePixel[self.x-1][self.y] = ((self.r,self.g,self.b))
-		self.singlePixel[self.x][self.y-1] = ((self.r,self.g,self.b))
+		self.singlePixel[self.x][self.y] = ((self.color[0],self.color[1],self.color[2]))
+		self.singlePixel[self.x+1][self.y] = ((self.color[0],self.color[1],self.color[2]))
+		self.singlePixel[self.x][self.y+1] = ((self.color[0],self.color[1],self.color[2]))
+		self.singlePixel[self.x-1][self.y] = ((self.color[0],self.color[1],self.color[2]))
+		self.singlePixel[self.x][self.y-1] = ((self.color[0],self.color[1],self.color[2]))
 
-		self.singlePixel[self.x+1][self.y+1] = ((self.r,self.g,self.b))
-		self.singlePixel[self.x-1][self.y+1] = ((self.r,self.g,self.b))
-		self.singlePixel[self.x+1][self.y-1] = ((self.r,self.g,self.b))
-		self.singlePixel[self.x-1][self.y-1] = ((self.r,self.g,self.b))
+		self.singlePixel[self.x+1][self.y+1] = ((self.color[0],self.color[1],self.color[2]))
+		self.singlePixel[self.x-1][self.y+1] = ((self.color[0],self.color[1],self.color[2]))
+		self.singlePixel[self.x+1][self.y-1] = ((self.color[0],self.color[1],self.color[2]))
+		self.singlePixel[self.x-1][self.y-1] = ((self.color[0],self.color[1],self.color[2]))
 
-	def change_direction(self, direction):
+	def change_direction(self, direction, color):
 		self.direction = direction
+		self.color = color
 
 
 
