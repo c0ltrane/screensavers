@@ -1,7 +1,11 @@
-Install pygame:
+### Install pygame:
 
-$> sudo apt-get install python-pygame
+```bash
+  $ sudo apt-get install python-pygame
+```
 
-Compile python script:
+### Run the python script:
 
-$> python circles_main.py
+```bash
+  $ python circles_main.py
+```
